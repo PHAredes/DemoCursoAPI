@@ -46,6 +46,10 @@ public class Curso implements Serializable {
     private List<Aluno> alunos;
 
     //getters, setters, equals and hashcode
+
+
+    public Long getId() { return id;}
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -66,4 +70,5 @@ public class Curso implements Serializable {
             return other.id == null;
         } else return id.equals(other.id);
     }
+
 }
