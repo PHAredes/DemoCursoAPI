@@ -45,7 +45,7 @@ public class Curso implements Serializable {
     @OneToMany(mappedBy = "curso", fetch = FetchType.LAZY)
     private List<Aluno> alunos;
 
-    //Geters, Seters, Equals e HashCod)
+    //getters, setters, equals and hashcode
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -63,10 +63,7 @@ public class Curso implements Serializable {
             return false;
         Curso other = (Curso) obj;
         if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
-        return true;
+            return other.id == null;
+        } else return id.equals(other.id);
     }
 }
